@@ -1,0 +1,120 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/ucam-eo/zarr-convention-tessera/refs/tags/v1/schema.json",
+  "title": "Tessera Embedding Convention (tessera:)",
+  "description": "Schema for quantised geospatial embedding vectors in Zarr. Properties use the 'tessera:' namespace prefix. This convention defines the store layout, dequantisation contract, and metadata for tessera embedding stores.",
+  "type": "object",
+  "properties": {
+    "zarr_format": {
+      "type": "integer",
+      "description": "Zarr format version"
+    },
+    "node_type": {
+      "type": "string",
+      "enum": ["group"],
+      "description": "Type of Zarr node (tessera convention applies to groups only)"
+    },
+    "attributes": {
+      "type": "object",
+      "description": "Zarr attributes containing convention metadata and tessera: prefixed properties",
+      "properties": {
+        "zarr_conventions": {
+          "type": "array",
+          "description": "Array of convention metadata objects",
+          "contains": {
+            "$ref": "#/$defs/conventionMetadata"
+          }
+        }
+      },
+      "required": ["zarr_conventions"],
+      "$ref": "#/$defs/tesseraAttributes"
+    }
+  },
+  "required": ["zarr_format", "node_type", "attributes"],
+  "additionalProperties": true,
+  "$defs": {
+    "conventionMetadata": {
+      "type": "object",
+      "description": "Tessera convention metadata object for use in zarr_conventions array",
+      "properties": {
+        "schema_url": {
+          "type": "string",
+          "const": "https://raw.githubusercontent.com/ucam-eo/zarr-convention-tessera/refs/tags/v1/schema.json",
+          "description": "URL to the JSON Schema definition for this convention"
+        },
+        "spec_url": {
+          "type": "string",
+          "const": "https://github.com/ucam-eo/zarr-convention-tessera/blob/v1/README.md",
+          "description": "URL to the full specification document"
+        },
+        "uuid": {
+          "type": "string",
+          "const": "e7f90d5f-019e-4a38-802f-9fa695e26c71",
+          "description": "UUID that permanently identifies this convention"
+        },
+        "name": {
+          "type": "string",
+          "const": "tessera:",
+          "description": "Human-readable name of the convention with colon to indicate key-prefixing"
+        },
+        "description": {
+          "type": "string",
+          "const": "Quantised geospatial embedding vectors with per-pixel dequantisation scales",
+          "description": "Brief description of the convention's purpose and usage"
+        }
+      },
+      "anyOf": [
+        { "required": ["schema_url"] },
+        { "required": ["spec_url"] },
+        { "required": ["uuid"] }
+      ],
+      "additionalProperties": false
+    },
+    "tesseraAttributes": {
+      "type": "object",
+      "description": "Tessera embedding properties using tessera: key prefix",
+      "properties": {
+        "zarr_conventions": true,
+        "tessera:dataset_version": {
+          "type": "string",
+          "description": "Version of the tessera data schema (e.g., 'v1')"
+        },
+        "tessera:year": {
+          "type": "integer",
+          "description": "Calendar year for which the embeddings were computed",
+          "minimum": 1970
+        },
+        "tessera:utm_zone": {
+          "type": "integer",
+          "description": "UTM zone number",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "tessera:n_bands": {
+          "type": "integer",
+          "description": "Number of embedding bands (channels)",
+          "minimum": 1
+        },
+        "tessera:n_tiles": {
+          "type": "integer",
+          "description": "Number of source tiles merged into this zone",
+          "minimum": 0
+        },
+        "tessera:model_version": {
+          "type": "string",
+          "description": "Version of the embedding model that produced the vectors"
+        },
+        "tessera:build_version": {
+          "type": "string",
+          "description": "Version of the software that built this store"
+        },
+        "tessera:has_rgb_preview": {
+          "type": "boolean",
+          "description": "Whether this zone group contains a populated RGB preview array"
+        }
+      },
+      "required": ["tessera:dataset_version", "tessera:year"],
+      "additionalProperties": true
+    }
+  }
+}

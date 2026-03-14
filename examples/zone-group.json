@@ -1,0 +1,44 @@
+{
+  "zarr_format": 3,
+  "node_type": "group",
+  "attributes": {
+    "zarr_conventions": [
+      {
+        "schema_url": "https://raw.githubusercontent.com/ucam-eo/zarr-convention-tessera/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/ucam-eo/zarr-convention-tessera/blob/v1/README.md",
+        "uuid": "e7f90d5f-019e-4a38-802f-9fa695e26c71",
+        "name": "tessera:",
+        "description": "Quantised geospatial embedding vectors with per-pixel dequantisation scales"
+      },
+      {
+        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/geo-proj/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/zarr-conventions/geo-proj/blob/v1/README.md",
+        "uuid": "f17cb550-5864-4468-aeb7-f3180cfb622f",
+        "name": "proj:",
+        "description": "Coordinate reference system information for geospatial data"
+      },
+      {
+        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/spatial/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/zarr-conventions/spatial/blob/v1/README.md",
+        "uuid": "689b58e2-cf7b-45e0-9fff-9cfc0883d6b4",
+        "name": "spatial:",
+        "description": "Spatial coordinate information"
+      }
+    ],
+    "tessera:dataset_version": "v1",
+    "tessera:year": 2024,
+    "tessera:utm_zone": 30,
+    "tessera:n_bands": 128,
+    "tessera:n_tiles": 240,
+    "tessera:model_version": "1.0",
+    "tessera:build_version": "0.14.0",
+    "tessera:has_rgb_preview": true,
+    "proj:code": "EPSG:32630",
+    "proj:wkt2": "PROJCRS[\"WGS 84 / UTM zone 30N\",BASEGEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4326]],CONVERSION[\"UTM zone 30N\",METHOD[\"Transverse Mercator\",ID[\"EPSG\",9807]],PARAMETER[\"Latitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-3,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"Scale factor at natural origin\",0.9996,SCALEUNIT[\"unity\",1],ID[\"EPSG\",8805]],PARAMETER[\"False easting\",500000,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1]],USAGE[SCOPE[\"Engineering survey, topographic mapping.\"],AREA[\"Between 6\u00b0W and 0\u00b0W, northern hemisphere between equator and 84\u00b0N\"],BBOX[0,-6,84,0]],ID[\"EPSG\",32630]]",
+    "spatial:dimensions": ["northing", "easting"],
+    "spatial:transform": [10.0, 0.0, 500000.0, 0.0, -10.0, 6200000.0],
+    "spatial:shape": [5000, 6000],
+    "spatial:bbox": [500000.0, 6150000.0, 560000.0, 6200000.0],
+    "spatial:registration": "pixel"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "zarr_format": 3,
+  "node_type": "group",
+  "attributes": {
+    "zarr_conventions": [
+      {
+        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/multiscales/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/zarr-conventions/multiscales/blob/v1/README.md",
+        "uuid": "d35379db-88df-4056-af3a-620245f8e347",
+        "name": "multiscales",
+        "description": "Multiscale layout of zarr datasets"
+      },
+      {
+        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/geo-proj/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/zarr-conventions/geo-proj/blob/v1/README.md",
+        "uuid": "f17cb550-5864-4468-aeb7-f3180cfb622f",
+        "name": "proj:",
+        "description": "Coordinate reference system information for geospatial data"
+      },
+      {
+        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/spatial/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/zarr-conventions/spatial/blob/v1/README.md",
+        "uuid": "689b58e2-cf7b-45e0-9fff-9cfc0883d6b4",
+        "name": "spatial:",
+        "description": "Spatial coordinate information"
+      }
+    ],
+    "multiscales": {
+      "layout": [
+        {
+          "asset": "0",
+          "transform": {
+            "scale": [1.0, 1.0],
+            "translation": [0.0, 0.0]
+          },
+          "spatial:shape": [1800000, 3600000],
+          "spatial:transform": [0.0001, 0.0, -180.0, 0.0, -0.0001, 90.0]
+        },
+        {
+          "asset": "1",
+          "derived_from": "0",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [900000, 1800000],
+          "spatial:transform": [0.0002, 0.0, -180.0, 0.0, -0.0002, 90.0]
+        },
+        {
+          "asset": "2",
+          "derived_from": "1",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [450000, 900000],
+          "spatial:transform": [0.0004, 0.0, -180.0, 0.0, -0.0004, 90.0]
+        },
+        {
+          "asset": "3",
+          "derived_from": "2",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [225000, 450000],
+          "spatial:transform": [0.0008, 0.0, -180.0, 0.0, -0.0008, 90.0]
+        },
+        {
+          "asset": "4",
+          "derived_from": "3",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [112500, 225000],
+          "spatial:transform": [0.0016, 0.0, -180.0, 0.0, -0.0016, 90.0]
+        },
+        {
+          "asset": "5",
+          "derived_from": "4",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [56250, 112500],
+          "spatial:transform": [0.0032, 0.0, -180.0, 0.0, -0.0032, 90.0]
+        },
+        {
+          "asset": "6",
+          "derived_from": "5",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [28125, 56250],
+          "spatial:transform": [0.0064, 0.0, -180.0, 0.0, -0.0064, 90.0]
+        },
+        {
+          "asset": "7",
+          "derived_from": "6",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [14062, 28125],
+          "spatial:transform": [0.0128, 0.0, -180.0, 0.0, -0.0128, 90.0]
+        },
+        {
+          "asset": "8",
+          "derived_from": "7",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [7031, 14062],
+          "spatial:transform": [0.0256, 0.0, -180.0, 0.0, -0.0256, 90.0]
+        },
+        {
+          "asset": "9",
+          "derived_from": "8",
+          "transform": {
+            "scale": [2.0, 2.0],
+            "translation": [0.0, 0.0]
+          },
+          "resampling_method": "mean",
+          "spatial:shape": [3515, 7031],
+          "spatial:transform": [0.0512, 0.0, -180.0, 0.0, -0.0512, 90.0]
+        }
+      ],
+      "resampling_method": "mean"
+    },
+    "proj:code": "EPSG:4326",
+    "spatial:dimensions": ["lat", "lon"],
+    "spatial:bbox": [-180.0, -90.0, 180.0, 90.0]
+  }
+}
