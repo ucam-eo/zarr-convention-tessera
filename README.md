@@ -10,7 +10,7 @@
 
 ## Description
 
-This Zarr Convention defines metadata for stores containing quantised geospatial embedding vectors, initially those for the TESSERA model.  All properties use the `tessera:` namespace prefix and are placed at the root `attributes` level following the [Zarr Conventions Specification](https://github.com/zarr-conventions/zarr-conventions-spec).
+This Zarr Convention defines metadata for stores containing quantised geospatial embedding vectors, initially those for the [TESSERA](https://geotessera.org) model (see also the [paper](https://arxiv.org/abs/2506.20380)).  All properties use the `tessera:` namespace prefix and are placed at the root `attributes` level following the [Zarr Conventions Specification](https://github.com/zarr-conventions/zarr-conventions-spec).
 
 A TESSERA store consolidates tiled embedding outputs from a foundation model
 into zone-wide Zarr v3 arrays.  Each embedding pixel is stored as an int8
