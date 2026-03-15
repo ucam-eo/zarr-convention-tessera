@@ -88,7 +88,6 @@ A tessera dataset is organised as one Zarr v3 store per year.  Within each store
 ### Year Store Root Group
 
 The root group identifies the store as a tessera dataset and declares the year.
-It also registers the conventions used by its children.
 
 ### Zone Groups
 
@@ -431,20 +430,6 @@ Southern hemisphere zones use UTM's standard false northing of 10,000,000 m.  Th
         "uuid": "e7f90d5f-019e-4a38-802f-9fa695e26c71",
         "name": "tessera:",
         "description": "Quantised geospatial embedding vectors with per-pixel dequantisation scales"
-      },
-      {
-        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/geo-proj/refs/tags/v1/schema.json",
-        "spec_url": "https://github.com/zarr-conventions/geo-proj/blob/v1/README.md",
-        "uuid": "f17cb550-5864-4468-aeb7-f3180cfb622f",
-        "name": "proj:",
-        "description": "Coordinate reference system information for geospatial data"
-      },
-      {
-        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/spatial/refs/tags/v1/schema.json",
-        "spec_url": "https://github.com/zarr-conventions/spatial/blob/v1/README.md",
-        "uuid": "689b58e2-cf7b-45e0-9fff-9cfc0883d6b4",
-        "name": "spatial:",
-        "description": "Spatial coordinate information"
       }
     ],
     "tessera:dataset_version": "v1",
@@ -597,5 +582,5 @@ described in the [Dequantisation](#dequantisation) section.
 
 ## Acknowledgements
 
-The template is based on the [STAC extensions template](https://github.com/stac-extensions/template/blob/main/README.md) and follows the structure established by the [spatial](https://github.com/zarr-conventions/spatial), [geo-proj](https://github.com/zarr-conventions/geo-proj), and [multiscales](https://github.com/zarr-conventions/multiscales) conventions.
+This convention follows the [Zarr Conventions Specification](https://github.com/zarr-conventions/zarr-conventions-spec) and the [zarr-conventions template](https://github.com/zarr-conventions/template), and builds on the structure established by the [spatial](https://github.com/zarr-conventions/spatial), [geo-proj](https://github.com/zarr-conventions/geo-proj), and [multiscales](https://github.com/zarr-conventions/multiscales) conventions.
 We thank Deepak Cherian for much useful feedback on this spec, as well as prototypes from Mark Elvers that helped inform this convention.
