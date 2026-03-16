@@ -342,8 +342,7 @@ The zone grid extent is snapped to shard boundaries so that all shards are compl
 
 Zone groups MUST also declare the `proj:` and `spatial:` conventions with appropriate properties:
 
-- `proj:code`: The EPSG code for the zone's UTM projection (e.g., `"EPSG:32630"`)
-- `proj:wkt2`: Full WKT2 CRS definition (recommended)
+- `proj:code`: The EPSG code for the zone's UTM projection (e.g., `"EPSG:32630"`).  Since tessera always uses standard UTM zones, `proj:code` alone is sufficient; clients can derive the full WKT2 via pyproj if needed.
 - `spatial:dimensions`: `["northing", "easting"]`
 - `spatial:transform`: 6-element affine `[pixel_size, 0, origin_easting, 0, -pixel_size, origin_northing]`
 - `spatial:shape`: `[H, W]`
@@ -363,7 +362,7 @@ Zone groups are named `utm{NN}` where `NN` is the two-digit zero-padded UTM zone
 - **Northern hemisphere zones**: `EPSG:{32600 + zone}` (e.g., zone 30 = EPSG:32630)
 - **Southern hemisphere zones**: `EPSG:{32700 + zone}` (e.g., zone 30 south = EPSG:32730)
 
-Southern hemisphere zones use UTM's standard false northing of 10,000,000 m.  The `proj:code` and `proj:wkt2` on the zone group are authoritative for determining the exact CRS.
+Southern hemisphere zones use UTM's standard false northing of 10,000,000 m.  The `proj:code` on the zone group is authoritative for determining the exact CRS.
 
 ## Examples
 
@@ -383,8 +382,8 @@ Southern hemisphere zones use UTM's standard false northing of 10,000,000 m.  Th
         "description": "Quantised geospatial embedding vectors with per-pixel dequantisation scales"
       },
       {
-        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/geo-proj/refs/tags/v1/schema.json",
-        "spec_url": "https://github.com/zarr-conventions/geo-proj/blob/v1/README.md",
+        "schema_url": "https://raw.githubusercontent.com/zarr-experimental/geo-proj/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/zarr-experimental/geo-proj/blob/v1/README.md",
         "uuid": "f17cb550-5864-4468-aeb7-f3180cfb622f",
         "name": "proj:",
         "description": "Coordinate reference system information for geospatial data"
@@ -406,7 +405,6 @@ Southern hemisphere zones use UTM's standard false northing of 10,000,000 m.  Th
     "tessera:build_version": "0.14.0",
     "tessera:has_rgb_preview": true,
     "proj:code": "EPSG:32630",
-    "proj:wkt2": "PROJCRS[\"WGS 84 / UTM zone 30N\", ...]",
     "spatial:dimensions": ["northing", "easting"],
     "spatial:transform": [10.0, 0.0, 500000.0, 0.0, -10.0, 6200000.0],
     "spatial:shape": [5000, 6000],
@@ -454,8 +452,8 @@ Southern hemisphere zones use UTM's standard false northing of 10,000,000 m.  Th
         "description": "Multiscale layout of zarr datasets"
       },
       {
-        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/geo-proj/refs/tags/v1/schema.json",
-        "spec_url": "https://github.com/zarr-conventions/geo-proj/blob/v1/README.md",
+        "schema_url": "https://raw.githubusercontent.com/zarr-experimental/geo-proj/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/zarr-experimental/geo-proj/blob/v1/README.md",
         "uuid": "f17cb550-5864-4468-aeb7-f3180cfb622f",
         "name": "proj:",
         "description": "Coordinate reference system information for geospatial data"
